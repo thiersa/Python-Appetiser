@@ -1,5 +1,7 @@
 # Python Appetiser presentation / training
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/thiersa/Python-Appetiser/master)
+
 Run this notebook from a conda environment `presentation`.
 In this directory type:
 
