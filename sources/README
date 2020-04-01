@@ -1,0 +1,83 @@
+Deze directory bevat een aantal min of meer samenhangende files voor het
+geven van een 2 à 2,5 uur durende presentatie over de voordelen van
+Python.
+
+De presentatie krijgt ongeveer de volgende vorm:
+
+1. Intro Python
+2. Webscraping met BeautifulSoup (met star performer requests)
+3. os.walk
+4. Jinja2 en/of YAML templating
+5. Relationele databases
+6. Log file analyse
+7. Pandas, seaborn, Numpy
+8. Webserver met Flask
+
+Alleen de punten 1 en 7 moeten nog ingevuld worden. De rest wordt gedekt
+door wat hier aanwezig is.
+
+Beschrijving
+============
+
+De tree van deze dir ziet er als volgt uit (__pycache__ weggelaten):
+.
+├── brandstof.html
+├── fuel-price-scraper.py
+├── fuelprices.db
+├── log-analyser.py
+├── README
+├── report_num_vals_in_dict.py
+├── templates
+│   ├── fuels.html
+│   ├── greeting_get.html
+│   ├── greeting_post.html
+│   ├── layout.html
+│   ├── secret.html
+│   └── vars.html
+├── walker.py
+└── webapp.py
+
+Het script fuel-price-scraper.py gebruikt requests om de webpagina
+met brandstofprijzen van nu.nl op te halen. Met BeautifulSoup
+worden dan de drie daggemiddelden eruit gepeuterd en aan een sqlite3
+database file toegevoegd: fuelprices.db
+
+Ter lering ende vermaeck is een dump van de nu.nl pagina bijgeleverd
+als brandstof.html. Kun je checken waar de data zit.
+
+Dit dekt dus al de punten 2 en 5.
+
+Dan kun je e.e.a. nog mooier zichtbaar maken door met Flask de webapp.py
+te starten:
+
+  $ export FLASK_APP=./webapp.py
+  $ flask run
+
+Ga met je browser naar http://localhost:5000/
+
+De Flask app is dus één simpele module: webapp.py, die ook fuelprices.db
+gebruikt. Verder toont ie ook andere pagina's, die allemaal worden
+gerenderd met Jinja2.
+
+Hiermee dekken we dus de punten 4 en 8.
+
+De webapp heeft ook een pagina met ee formulier, om GET/POST te tonen,
+en een pagina waarvoor BasicAuthentication nodig is. Username en password
+staan gewoon vermeld; het gaat om het idee.
+
+De templates die webapp.py gebruikt staan in de subdir templates. Duh.
+Die werken met een centrale layout (layout.html), waarvan ze erven en
+elk hun eigen blocks invullen. Laat dus ook real-world gebruik van de 
+templates zien.
+
+Voor punt 3 is er walker.py, die de file sizes optelt in een gegeven
+top directory, mee te geven als enige argument op de command line.
+Als je niks meegeeft pakt ie je home directory. Misschien wat veel van
+het goede. :-)
+
+Tenslotte punt 6, log file analyse, met log-analyser.py. Die gebruikt
+de door mij gefabriceerde module report_num_vals_in_dict.py om een
+mooi gesorteerd staafdiagram te tonen, passend in je terminal window.
+
+Hij toont welke processen meldingen hebben geschreven naar de syslog,
+en die worden gesorteerd op hoeveelheid meldingen.

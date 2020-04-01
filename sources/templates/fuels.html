@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Fuel Prices{% endblock %}
+{% block content %}
+<table border="1">
+    <tr><th>Date</th><th>Euro95</th><th>Diesel</th><th>LPG</th></tr>
+    {% for row in fuels %}
+        <tr>
+            <td>{{ row.Datum }}</td>
+            <td>{{ row.Euro95 }}</td>
+            <td>{{ row.Diesel }}</td>
+            <td>{{ row.LPG }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

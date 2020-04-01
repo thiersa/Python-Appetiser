@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js "> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"4702f272e2","agent":"","transactionName":"YgdVbUYHW0tWURFYXVtNcUxaBUFRWFxKUkdHEFJXQDlGUUNXS0dbUBVEF0MPUV9SRhYLZVwGUFxAIEBdW2QMVEUbBVJN","applicationID":"45828648","errorBeacon":"bam.nr-data.net","applicationTime":90}</script>
+    <title>Brandstof | NU - Het laatste nieuws het eerst op NU.nl</title>
+    <meta name="author" content="" />
+    <meta name="apple-itunes-app" content="app-id=382059927" />
+    <meta name="google-play-app" content="app-id=nl.sanomamedia.android.nu" />
+    <meta name="google-site-verification" content="oQsKfEIgPiNMkgU1oDrWYKX6Z5FCFrwmlq3_VK6jlNo" />
+    <meta name="google-site-verification" content="tRpopkLA7bauR1j8Ndzqrf9vyTjq-MEcNXh7MiApp34" />
+    <meta property="fb:pages" content="129383287089484" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="keywords" content="Brandstof" />
+    <meta name="twitter:site" content="@NUnl" />
+    <meta name="description" content="Brandstof" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="Brandstof" />
+    <meta name="title" content="Brandstof" />
+    <meta name="twitter:title" content="Brandstof" />
+    <meta name="twitter:url" content="https://www.nu.nl/brandstof" />
+    <meta name="og:url" content="https://www.nu.nl/brandstof" />
+    <meta name="og:site_name" content="NU" />
+    <meta name="og:title" content="Brandstof" />
+    <meta name="og:locale" content="nl_NL" />
+    <meta name="og:description" content="Brandstof" />
+    <meta name="og:type" content="main" />
+    <!-- favicons -->
+    <!--[if IE]><link rel="shortcut icon" href="/static/img/atoms/images/favicon/favicon.ico"><![endif]-->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/img/atoms/images/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/img/atoms/images/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/img/atoms/images/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/img/atoms/images/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/img/atoms/images/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/img/atoms/images/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/img/atoms/images/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/img/atoms/images/favicon/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/atoms/images/favicon/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/svg+xml" href="/static/img/atoms/images/favicon/favicon_svg.svg" sizes="any" />
+    <link rel="icon" type="image/png" href="/static/img/atoms/images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/static/img/atoms/images/favicon/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="/static/img/atoms/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/static/img/atoms/images/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="manifest" href="/static/img/atoms/images/favicon/manifest.json" />
+    <link rel="mask-icon" href="/static/img/atoms/images/favicon/safari-pinned-tab.svg" color="#010050" />
+    <link rel="shortcut icon" href="/static/img/atoms/images/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#010050" />
+    <meta name="msapplication-TileImage" content="/static/img/atoms/images/favicon/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/static/img/atoms/images/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#010050" />
+    <script type="text/javascript" id="tealium_datalayer">
+        var utag_data = {"site_location": "prod", "page_zone": "brandstof", "page_type": "other", "site_country": "NL", "site_name": "NU.nl", "tracking_by": "tealium", "dc_params": "CATEGORY=brandstof;KEYWORDS=;"};
+    </script>
+    <script src="https://consent.snmmd.nl/js/cookiebar-latest.js"></script>
+    <script type="text/javascript">
+        (function(a,b,c,d){
+            a='//tags.tiqcdn.com/utag/sanoma/nu-nl/prod/utag.js';
+            b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+            a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+        })();
+    </script>
+        <!--[if gte IE 10]><!-->
+        <link rel="stylesheet" href="/static/CACHE/css/57fcd0931f3e.css" type="text/css" media="all" />
+        <!--<![endif]-->
+        <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/static/CACHE/css/d76d15a07873.css" type="text/css" />
+        <link rel="stylesheet" href="/static/CACHE/css/9176bed448c0.css" type="text/css" />
+        <![endif]-->
+        <!--[if IE 7]>
+        <link rel="stylesheet" href="/static/CACHE/css/15aa21ba1ac2.css" type="text/css" />
+        <![endif]-->
+<!-- Block CSS -->
+    <!--[if (lt IE 9) & (!IEMobile)]>
+        <script type="text/javascript" src="/static/CACHE/js/0129764bafcf.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var app_name = 'NU';
+        var app_stage = 'production';
+        var FULL_PATH = '/brandstof';
+    </script>
+        <script type="text/javascript">
+            var NU = NU || {}, static_url = '/static/', mediatool_base_url = 'media.nu.nl', blocks = {}, is_adblocker_in_use = true, JW_VIDEO_URL = 'https://content.jwplatform.com/manifests/{id}.m3u8', JW_LIVESTREAM_URL = 'https://cdn.jwplayer.com/videos/{id}.m3u8', JW_THUMB_URL = 'https://content.jwplatform.com/thumbs/{id}-720.jpg', CORAL_TALK_URL = 'https://talk.nu.nl', site_base_url_secure = "https://secure.nu.nl"; NU.relatedVideoProviders = [ { url: '', slug: 'editorial' } ]; NU.RelatedVideoSource = 'ratas'; NU.RatasVideoRecommendationsUrl = 'https://ratas.sanoma.fi/recs/2.2/video_overlay/nunl'; NU.RatasVideoRecommendationsTtl = '1m'; NU.RatasVideoPageRecommendationsUrl = 'https://ratas.sanoma.fi/recs/2.2/video_list/nunl'; NU.RatasVideoPageRecommendationsTtl = '30m'; NU.ActivateStickySkyscraper = 0; NU.VideoDurationDefault = '90'; NU.SanomaAccountRegisterScreenName = 'funnel_register'; NU.SanomaAccountLoginScreenName = 'funnel_login'; NU.IsComponentsPage = false;
+        </script>
+        <script src="/static/js/advertising.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/CACHE/js/f297cdf9ad8a.js"></script>
+    <script type="text/javascript" src="/static/CACHE/js/1a6fc019042e.js"></script>
+    <!-- Advertorial styling -->
+    <!-- Advertorial styling -->
+</head>
+<body id="nu" class="three-columns page-fuel  " data-pagetype="fuel" data-section="">
+    <div class="skip dispnone">
+        <a href="#main">Skip to main content</a>
+    </div>
+    <div id="wrapper clearfix">
+            <div class="zone clearfix" data-zone="body_top" data-vr-zone="body_top">
+    <div
+    id="block-241459"
+    data-id="block-241459"
+    data-position=""
+    data-type="webring"
+    class="block webring"
+    data-sac-marker="block.webring"
+>
+    <div class="block-wrapper horizontal">
+    <div class="block-content">
+        <div class="ring">
+    <a href="https://www.nu.nl" target="_self" class="nav-item nav-main nav-hasimage item-nu current trackevent" title="Voorpagina" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nu">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nu logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Voorpagina</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/economie" target="_self" class="nav-item nav-main nav-hasimage item-nuzakelijk trackevent" title="Economie" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nuzakelijk">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuzakelijk logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Economie</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/sport" target="_self" class="nav-item nav-main nav-hasimage item-nusport trackevent" title="NUsport" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nusport">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nusport logo" />
+</div>
+        </div>
+        <span class="nav-item-text">NUsport</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/tech" target="_self" class="nav-item nav-main nav-hasimage item-nutech trackevent" title="Tech" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nutech">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nutech logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Tech</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/entertainment" target="_self" class="nav-item nav-main nav-hasimage item-nuentertainment trackevent" title="Entertainment" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nuentertainment">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuentertainment logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Entertainment</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/uit" target="_self" class="nav-item nav-main nav-hasimage item-nuuit trackevent" title="Uit" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nuuit">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuuit logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Uit</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/overig" target="_self" class="nav-item nav-main nav-hasimage item-nuoverig trackevent" title="Overig" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nuoverig">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuoverig logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Overig</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/wonen" target="_self" class="nav-item nav-main nav-hasimage item-nuwonen trackevent" title="Wonen" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nuwonen">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuwonen logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Wonen</span>
+    </div>
+</a>
+        <a href="https://www.nuwerk.nl" target="_blank" class="nav-item nav-main nav-hasimage item-nuwerk trackevent" title="Werk" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nuwerk">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuwerk logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Werk</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/nushop" target="_self" class="nav-item nav-main nav-hasimage item-nushop trackevent" title="Shop" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-ms icon-nushop">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nushop logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Shop</span>
+    </div>
+</a>
+        </div>
+        <div class="btn account account_register" style="display: none;">
+    <div class="accountimage"></div>
+    <div class="loginbutton">
+        Mijn NU.nl
+    </div>
+    <div class="accountname">
+        <span class="firstname"></span>
+        <span class="lastname"></span>
+    </div>
+    <ul class="dropdown">
+        <li>
+            <a class=" trackevent account_profile">Mijn account</a>
+        </li>
+        <li>
+            <a class=" trackevent account_logout">Uitloggen</a>
+        </li>
+        <li>
+            <span class=" trackevent accounttagline">Powered by Sanoma</span>
+        </li>
+    </ul>
+</div>
+        <div class="menutrigger">
+            <div class="molecule-webring-menutrigger">
+        <button class="btn toggle-menu menu-left"
+                type="button"></button>
+        <div class="nav-branding">
+            <a href="/" class="logo trackevent" data-trackeventlabel="logo">
+    <div class="svg-icon icon-main icon-">
+        <img src="/static/img/atoms/images/logos/logosprite.svg?v=3"
+             alt=" logo" />
+</div>
+</a>
+                <h3>Brandstof</h3>
+        </div>
+</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+</div>
+        <div id="container" class="clearfix">
+            <div id="header">
+                    <div class="zone clearfix" data-zone="header" data-vr-zone="header">
+    <div
+    id="block-241461"
+    data-id="block-241461"
+    data-position=""
+    data-type="smartbanner"
+    class="block smartbanner"
+    data-sac-marker="block.smartbanner"
+>
+    <div class="block-wrapper">
+    <div class="block-content">
+    </div>
+</div>
+</div>
+    <div
+    id="block-387531"
+    data-id="block-387531"
+    data-position=""
+    data-type="tealium"
+    class="block tealium h1"
+    data-sac-marker="block.tealium"
+>
+    <div class="block-wrapper" id="h1"></div>
+</div>
+</div>
+                <div class="block toast adblocker" data-type="toast.adblocker" style="display: none;">
+    <div class="block-content">
+        <p>Beste bezoeker,<br /><br />
+        Wij zien dat u een adblocker gebruikt waardoor u alleen advertenties ziet die door uw adblocker worden goedgekeurd.
+        Dit vinden wij jammer, want NU.nl is mede dankzij onze advertenties gratis toegankelijk. Wilt u een uitzondering maken voor NU.nl,
+        of meer lezen over hoe wij met advertenties omgaan?
+        <a href="/adblock.html" class="trackevent">Klik dan hier</a>.
+    </div>
+</div>
+            </div>
+            <div id="content_container clearfix">
+                <div id="menu" class="column first nu-main-menu nu-main-menu-left">
+                    <div class="column-content">
+                            <div class="zone clearfix" data-zone="menu" data-vr-zone="menu">
+    <div
+    id="block-241473"
+    data-id="block-241473"
+    data-position=""
+    data-type="menu"
+    class="block menu compact"
+    data-sac-marker="block.menu"
+>
+    <!-- Left menu element-->
+<nav>
+	<div class="nav-branding">
+        <div class="nav-item nav-title">
+            <a href="/" class="logo trackevent" data-trackeventlabel="logo">
+    <div class="svg-icon icon-main icon-">
+        <img src="/static/img/atoms/images/logos/logosprite.svg?v=3"
+             alt=" logo" />
+</div>
+</a>
+            <h3>NU</h3>
+            <div class="clear"></div>
+        </div>
+        <button class="btn nav-close"
+                type="button"></button>
+    </div>
+    <div class="nav-content">
+    <a href="/" class="nav-item nav-main   first trackevent" >
+        Voorpagina
+    </a>
+    <a href="/net-binnen" class="nav-item nav-main    trackevent" >
+        Net binnen
+    </a>
+    <a href="/algemeen" class="nav-item nav-main    trackevent" >
+        Algemeen
+    </a>
+    <a href="/dvn" class="nav-item nav-main    trackevent" >
+        Achtergronden
+    </a>
+    <a href="/economie" class="nav-item nav-main    trackevent" >
+        Economie
+    </a>
+    <a href="/sport" class="nav-item nav-main    trackevent" >
+        Sport
+    </a>
+    <a href="/wk-2018" class="nav-item nav-main    trackevent" >
+        WK 2018
+    </a>
+    <a href="/tech" class="nav-item nav-main    trackevent" >
+        Tech
+    </a>
+    <a href="/entertainment" class="nav-item nav-main    trackevent" >
+        Entertainment
+    </a>
+    <a href="/uit" class="nav-item nav-main    trackevent" >
+        Uit
+    </a>
+    <a href="/overig" class="nav-item nav-main    trackevent" >
+        Overig
+    </a>
+    <a href="/videos" class="nav-item nav-main    trackevent" >
+        Video&#39;s
+    </a>
+    <a href="/regio" class="nav-item nav-main    trackevent" >
+        Regionaal
+    </a>
+    <a href="/advertorials" class="nav-item nav-main   last trackevent" >
+        Van adverteerders
+    </a>
+        <div class="clear"></div>
+    </div>
+    <div class="nav-separator"></div>
+	<div class="nav-content nav-webring">
+    <a href="https://www.nu.nl" target="_self" class="nav-item nav-main nav-hasimage item-nu current trackevent" title="Voorpagina" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nu">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nu logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Voorpagina</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/economie" target="_self" class="nav-item nav-main nav-hasimage item-nuzakelijk trackevent" title="Economie" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nuzakelijk">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuzakelijk logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Economie</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/sport" target="_self" class="nav-item nav-main nav-hasimage item-nusport trackevent" title="NUsport" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nusport">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nusport logo" />
+</div>
+        </div>
+        <span class="nav-item-text">NUsport</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/tech" target="_self" class="nav-item nav-main nav-hasimage item-nutech trackevent" title="Tech" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nutech">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nutech logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Tech</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/entertainment" target="_self" class="nav-item nav-main nav-hasimage item-nuentertainment trackevent" title="Entertainment" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nuentertainment">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuentertainment logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Entertainment</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/uit" target="_self" class="nav-item nav-main nav-hasimage item-nuuit trackevent" title="Uit" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nuuit">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuuit logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Uit</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/overig" target="_self" class="nav-item nav-main nav-hasimage item-nuoverig trackevent" title="Overig" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nuoverig">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuoverig logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Overig</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/wonen" target="_self" class="nav-item nav-main nav-hasimage item-nuwonen trackevent" title="Wonen" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nuwonen">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuwonen logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Wonen</span>
+    </div>
+</a>
+        <a href="https://www.nuwerk.nl" target="_blank" class="nav-item nav-main nav-hasimage item-nuwerk trackevent" title="Werk" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nuwerk">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nuwerk logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Werk</span>
+    </div>
+</a>
+        <a href="https://www.nu.nl/nushop" target="_self" class="nav-item nav-main nav-hasimage item-nushop trackevent" title="Shop" rel="nofollow">
+    <div class="nav-wrapper">
+        <div class="nav-item-image">
+            <div class="svg-icon icon-m icon-nushop">
+        <img src="/static/img/atoms/images/logos/logosprite_menu.svg?v=3"
+             alt="nushop logo" />
+</div>
+        </div>
+        <span class="nav-item-text">Shop</span>
+    </div>
+</a>
+        <div class="clear"></div>
+    </div>
+</nav>
+</div>
+    <div
+    id="block-387534"
+    data-id="block-387534"
+    data-position=""
+    data-type="tealium"
+    class="block tealium compact v1"
+    data-sac-marker="block.tealium"
+>
+    <div class="block-wrapper" id="v1"></div>
+</div>
+</div>
+                    </div>
+                </div>
+                <div id="main" class="column two last clearfix">
+                    <div class="column-content clearfix">
+                        <div class="zone clearfix" data-zone="top" data-vr-zone="top">
+    <div
+    id="block-241471"
+    data-id="block-241471"
+    data-position=""
+    data-type="topbar"
+    class="block topbar"
+    data-sac-marker="block.topbar"
+    data-url="/block/json/topbar?"
+    data-refresh="60"
+>
+    <div class="block-wrapper clearfix">
+    <div class="column first clearfix">
+        <div class="search-box-molecule closed">
+    <div class="search-box">
+       <form action="/zoeken">
+            <button type="submit" class="trackevent" data-trackeventlabel="submit-search"><i class="fa fa-search"></i></button>
+            <div class="search-input">
+                <input id="search-input-q" name="q" type="search" placeholder="Zoeken" />
+            </div>
+        </form>
+    </div>
+    <button class="btn search-button trackevent" data-trackeventlabel="toggle-search" type="button">
+        <i class="fa fa-search"></i>
+        <i class="fa fa-times"></i>
+    </button>
+</div>
+        <div class="block slogan">
+    <div class="block-wrapper">
+        <div class="block-content">
+            Woensdag 27 juni 2018
+            <div class="min600 set-inline">
+                <div class="divider dotted vertical">|</div>
+                <span>Het laatste nieuws het eerst op NU.nl</span>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="column last">
+        <div class="block widgets">
+    <div class="block-wrapper">
+        <div class="widget-wrapper">
+            <div class="btn fixed-l widget weather">
+                <a href="/weer" class="btn-content trackevent" data-trackeventlabel="weather" data-trackeventcategory="widget" data-trackeventaction="click">
+                    <span class="btn-centered">
+                        <span class="dispnone">Temperatuur</span>
+                            <i class="btn-icon fc fc-weather-a"></i>
+                            <span class="btn-text">27 &deg;C</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="widget-wrapper">
+            <div class="btn fixed-l widget traffic">
+                <a href="/verkeer" class="btn-content trackevent" data-trackeventlabel="traffic" data-trackeventcategory="widget" data-trackeventaction="click">
+                    <span class="btn-centered">
+                        <span class="btn-icon"></span>
+                        <span class="dispnone">Vervoer</span>
+                        <span class="btn-text">
+                                5
+                             Files
+                        </span>
+                        <span class="btn-text dispnone">
+                                6
+                             NS
+                        </span>
+                        <span class="btn-text dispnone">
+                            &euro; 1,754
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="widget-wrapper">
+            <div class="btn fixed-l widget stocks">
+                <a href="/aandelen" class="btn-content trackevent" data-trackeventlabel="stocks" data-trackeventcategory="widget" data-trackeventaction="click">
+                    <span class="btn-centered">
+                        <span class="btn-icon"></span>
+                        <span class="dispnone">AEX</span>
+                        <span class="btn-text">547,53</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="widget-wrapper">
+            <div class="btn fixed-l widget tvguide">
+                <a href="/tvgids" class="btn-content trackevent" data-trackeventlabel="tvguide" data-trackeventcategory="widget" data-trackeventaction="click">
+                    <span class="btn-centered">
+                        <span class="btn-icon"></span>
+                        <span class="btn-text">TV gids</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="widget-wrapper">
+            <div class="btn fixed-l widget sports">
+                <a href="/live/voetbal" class="btn-content trackevent" data-trackeventlabel="sports" data-trackeventcategory="widget" data-trackeventaction="click">
+                    <span class="btn-centered">
+                        <span class="btn-icon"></span>
+                        <span class="dispnone">Live voetbalwedstrijden</span>
+                        <span class="btn-text">0 Live</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+    </div>
+</div>
+</div>
+</div>
+                        <div class="column first">
+                            <div class="column-content">
+                                <div class="column-content-background">
+        <div class="zone clearfix" data-zone="main" data-vr-zone="main">
+    <div
+    id="block-241477"
+    data-id="block-241477"
+    data-position=""
+    data-type="traffic.toggles"
+    class="block traffic toggles"
+    data-sac-marker="block.traffic.toggles"
+>
+    <div class="block-wrapper">
+    <div class="block-content">
+        <ul>
+            <li class="road "><a href="/verkeer" class="trackevent" data-trackeventlabel="traffic-toggle-road"><span>Verkeer</span></a></li>
+            <li class="rail "><a href="/trein" class="trackevent" data-trackeventlabel="traffic-toggle-train"><span>NS Info</span></a></li>
+            <li class="fuel current"><a href="/brandstof" class="trackevent" data-trackeventlabel="traffic-toggle-fuel"><span>Brandstof</span></a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+    <div
+    id="block-241479"
+    data-id="block-241479"
+    data-position=""
+    data-type="text"
+    class="block text"
+    data-sac-marker="block.text"
+>
+    <div class="block-wrapper widgets">
+    <div class="block-title"><h2>Actuele brandstofprijzen</h2></div>
+    <div class="block-content">Onderstaand schema geeft dagelijks de adviesprijzen van de vijf grootste oliemaatschappijen weer. De Gemiddelde Landelijke Adviesprijs (GLA) is het gemiddelde van deze adviesprijzen. Wekelijks wijzigen de prijzen van de oliemaatschappijen ongeveer drie keer.</div>
+</div>
+</div>
+    <div
+    id="block-241481"
+    data-id="block-241481"
+    data-position=""
+    data-type="traffic.fuel.pricetable"
+    class="block traffic fuel pricetable"
+    data-sac-marker="block.traffic.fuel.pricetable"
+>
+    <div class="block-wrapper">
+    <div class="block-content">
+    <div class="card collapsible compact-table">
+        <div class="card-wrapper">
+            <div class="card-content">
+                <strong>Euro95</strong>
+            </div>
+            <div class="card-extended-content">
+                <table class="table table-bordered horizontal vertical">
+                    <tbody>
+                        <tr>
+                            <td>GLA*</td>
+                            <td>1,754</td>
+                        </tr>
+                        <tr>
+                            <td>Verschil**</td>
+                            <td class="">0,0</td>
+                        </tr>
+                                <tr>
+                                    <td>BP</td>
+                                    <td>1,759</td>
+                                </tr>
+                                <tr>
+                                    <td>Esso</td>
+                                    <td>1,752</td>
+                                </tr>
+                                <tr>
+                                    <td>Shell</td>
+                                    <td>1,749</td>
+                                </tr>
+                                <tr>
+                                    <td>Texaco</td>
+                                    <td>1,759</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>1,749</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card collapsible compact-table">
+        <div class="card-wrapper">
+            <div class="card-content">
+                <strong>Diesel</strong>
+            </div>
+            <div class="card-extended-content">
+                <table class="table table-bordered horizontal vertical">
+                    <tbody>
+                        <tr>
+                            <td>GLA*</td>
+                            <td>1,444</td>
+                        </tr>
+                        <tr>
+                            <td>Verschil**</td>
+                            <td class="">0,0</td>
+                        </tr>
+                                <tr>
+                                    <td>BP</td>
+                                    <td>1,449</td>
+                                </tr>
+                                <tr>
+                                    <td>Esso</td>
+                                    <td>1,442</td>
+                                </tr>
+                                <tr>
+                                    <td>Shell</td>
+                                    <td>1,439</td>
+                                </tr>
+                                <tr>
+                                    <td>Texaco</td>
+                                    <td>1,449</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>1,439</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card collapsible compact-table">
+        <div class="card-wrapper">
+            <div class="card-content">
+                <strong>LPG</strong>
+            </div>
+            <div class="card-extended-content">
+                <table class="table table-bordered horizontal vertical">
+                    <tbody>
+                        <tr>
+                            <td>GLA*</td>
+                            <td>0,868</td>
+                        </tr>
+                        <tr>
+                            <td>Verschil**</td>
+                            <td class="">0,0</td>
+                        </tr>
+                                <tr>
+                                    <td>BP</td>
+                                    <td>0,879</td>
+                                </tr>
+                                <tr>
+                                    <td>Esso</td>
+                                    <td>0,872</td>
+                                </tr>
+                                <tr>
+                                    <td>Shell</td>
+                                    <td>0,859</td>
+                                </tr>
+                                <tr>
+                                    <td>Texaco</td>
+                                    <td>0,869</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>0,859</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card collapsible compact-table">
+        <div class="card-wrapper">
+            <div class="card-content">
+                <strong>Super</strong>
+            </div>
+            <div class="card-extended-content">
+                <table class="table table-bordered horizontal vertical">
+                    <tbody>
+                        <tr>
+                            <td>GLA*</td>
+                            <td>1,829</td>
+                        </tr>
+                        <tr>
+                            <td>Verschil**</td>
+                            <td class="">0,0</td>
+                        </tr>
+                                <tr>
+                                    <td>Texaco</td>
+                                    <td>1,819</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>1,839</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card collapsible compact-table">
+        <div class="card-wrapper">
+            <div class="card-content">
+                <strong>Super MLV</strong>
+            </div>
+            <div class="card-extended-content">
+                <table class="table table-bordered horizontal vertical">
+                    <tbody>
+                        <tr>
+                            <td>GLA*</td>
+                            <td>1,839</td>
+                        </tr>
+                        <tr>
+                            <td>Verschil**</td>
+                            <td class="">0,0</td>
+                        </tr>
+                                <tr>
+                                    <td>Texaco</td>
+                                    <td>1,839</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card collapsible compact-table">
+        <div class="card-wrapper">
+            <div class="card-content">
+                <strong>Premium benzines</strong>
+            </div>
+            <div class="card-extended-content">
+                <table class="table table-bordered horizontal vertical">
+                    <tbody>
+                        <tr>
+                            <td>GLA*</td>
+                            <td>1,818</td>
+                        </tr>
+                        <tr>
+                            <td>Verschil**</td>
+                            <td class="">0,0</td>
+                        </tr>
+                                <tr>
+                                    <td>BP</td>
+                                    <td>1,829</td>
+                                </tr>
+                                <tr>
+                                    <td>Esso</td>
+                                    <td>1,822</td>
+                                </tr>
+                                <tr>
+                                    <td>Shell</td>
+                                    <td>1,809</td>
+                                </tr>
+                                <tr>
+                                    <td>Texaco</td>
+                                    <td>1,819</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>1,809</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card collapsible compact-table">
+        <div class="card-wrapper">
+            <div class="card-content">
+                <strong>Premium diesels</strong>
+            </div>
+            <div class="card-extended-content">
+                <table class="table table-bordered horizontal vertical">
+                    <tbody>
+                        <tr>
+                            <td>GLA*</td>
+                            <td>1,518</td>
+                        </tr>
+                        <tr>
+                            <td>Verschil**</td>
+                            <td class="">0,0</td>
+                        </tr>
+                                <tr>
+                                    <td>BP</td>
+                                    <td>1,529</td>
+                                </tr>
+                                <tr>
+                                    <td>Esso</td>
+                                    <td>1,516</td>
+                                </tr>
+                                <tr>
+                                    <td>Shell</td>
+                                    <td>1,519</td>
+                                </tr>
+                                <tr>
+                                    <td>Texaco</td>
+                                    <td>1,519</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>1,509</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card collapsible compact-table">
+        <div class="card-wrapper">
+            <div class="card-content">
+                <strong>BlueOne95</strong>
+            </div>
+            <div class="card-extended-content">
+                <table class="table table-bordered horizontal vertical">
+                    <tbody>
+                        <tr>
+                            <td>GLA*</td>
+                            <td>1,744</td>
+                        </tr>
+                        <tr>
+                            <td>Verschil**</td>
+                            <td class="">0,0</td>
+                        </tr>
+                                <tr>
+                                    <td>Argos</td>
+                                    <td>1,744</td>
+                                </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<table class="table table-bordered horizontal vertical table-striped reversed full-table">
+    <thead>
+        <tr>
+            <th class="brandname">Brandstof</th>
+            <th>GLA*</th>
+            <th>Verschil**</th>
+                <th>Argos</th>
+                <th>BP</th>
+                <th>Esso</th>
+                <th>Shell</th>
+                <th>Texaco</th>
+                <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td class="brandname">Euro95</td>
+                <td>1,754</td>
+                <td class="">0,0</td>
+                    <td>n.v.t</td>
+                    <td>1,759</td>
+                    <td>1,752</td>
+                    <td>1,749</td>
+                    <td>1,759</td>
+                    <td>1,749</td>
+            </tr>
+            <tr>
+                <td class="brandname">Diesel</td>
+                <td>1,444</td>
+                <td class="">0,0</td>
+                    <td>n.v.t</td>
+                    <td>1,449</td>
+                    <td>1,442</td>
+                    <td>1,439</td>
+                    <td>1,449</td>
+                    <td>1,439</td>
+            </tr>
+            <tr>
+                <td class="brandname">LPG</td>
+                <td>0,868</td>
+                <td class="">0,0</td>
+                    <td>n.v.t</td>
+                    <td>0,879</td>
+                    <td>0,872</td>
+                    <td>0,859</td>
+                    <td>0,869</td>
+                    <td>0,859</td>
+            </tr>
+            <tr>
+                <td class="brandname">Super</td>
+                <td>1,829</td>
+                <td class="">0,0</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>1,819</td>
+                    <td>1,839</td>
+            </tr>
+            <tr>
+                <td class="brandname">Super MLV</td>
+                <td>1,839</td>
+                <td class="">0,0</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>1,839</td>
+                    <td>n.v.t</td>
+            </tr>
+            <tr>
+                <td class="brandname">Premium benzines</td>
+                <td>1,818</td>
+                <td class="">0,0</td>
+                    <td>n.v.t</td>
+                    <td>1,829</td>
+                    <td>1,822</td>
+                    <td>1,809</td>
+                    <td>1,819</td>
+                    <td>1,809</td>
+            </tr>
+            <tr>
+                <td class="brandname">Premium diesels</td>
+                <td>1,518</td>
+                <td class="">0,0</td>
+                    <td>n.v.t</td>
+                    <td>1,529</td>
+                    <td>1,516</td>
+                    <td>1,519</td>
+                    <td>1,519</td>
+                    <td>1,509</td>
+            </tr>
+            <tr>
+                <td class="brandname">BlueOne95</td>
+                <td>1,744</td>
+                <td class="">0,0</td>
+                    <td>1,744</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+                    <td>n.v.t</td>
+            </tr>
+    </tbody>
+</table>
+<div class="fuel-pricetable-legend">
+    <span class="fuel-update-time">Laatste update: 27 juni 2018</span>
+    <span class="fuel-legend">* GLA = Gemiddelde Landelijke Adviesprijs in euro's per liter.</span>
+    <span class="fuel-legend">** Verschil t.o.v. 26 juni 2018 in centen.</span>
+</div>
+    </div>
+</div>
+</div>
+    <div
+    id="block-241483"
+    data-id="block-241483"
+    data-position=""
+    data-type="text"
+    class="block text"
+    data-sac-marker="block.text"
+>
+    <div class="block-wrapper widgets">
+    <div class="block-content">Nederland heeft de hoogste belastingdruk op brandstof in de wereld. Tweederde van de Euro95 bestaat uit accijns, wettelijke heffing en BTW. De rest van de literprijs is onder andere afhankelijk van de productieomvang, de dollarkoers, wereldgebeurtenissen en weersomstandigheden.</div>
+</div>
+</div>
+    <div
+    id="block-241485"
+    data-id="block-241485"
+    data-position=""
+    data-type="link"
+    class="block link"
+    data-sac-marker="block.link"
+>
+<div class="block-wrapper default">
+    <div class="block-content">
+        <div class="molecule-link molecule-extension">
+    <a href="http://www.unitedconsumers.com/vakantie" class="via-link trackevent" data-trackeventlabel="link">
+        <div class="item-content">
+            <span>Brandstofprijzen in Europa</span>
+        </div>
+    </a>
+    <div class="clear"></div>
+</div>
+    </div>
+</div>
+</div>
+    <div
+    id="block-241487"
+    data-id="block-241487"
+    data-position=""
+    data-type="supplier.credits"
+    class="block supplier credits"
+    data-sac-marker="block.supplier.credits"
+>
+    <div class="block-wrapper">
+    <div class="block-footer">
+        <a href="https://www.unitedconsumers.com" class="via-link trackevent" target="_blank">
+            <span>De brandstofinformatie wordt verzorgd door UnitedConsumers</span>
+        </a>
+    </div>
+</div>
+</div>
+    <div
+    id="block-387537"
+    data-id="block-387537"
+    data-position=""
+    data-type="tealium"
+    class="block tealium wsc-r1"
+    data-sac-marker="block.tealium"
+>
+    <div class="block-wrapper" id="wsc-r1"></div>
+</div>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column last">
+                            <div class="column-content">
+                                <div class="zone clearfix" data-zone="sidebar" data-vr-zone="sidebar">
+    <div
+    id="block-241491"
+    data-id="block-241491"
+    data-position=""
+    data-type="mostcombination"
+    class="block mostcombination compact"
+    data-sac-marker="block.mostcombination"
+>
+    <div class="block-wrapper">
+    <div class="block-content">
+        <div class="tabs tabs2 fullwidth" data-tab-constrain="1">
+            <div class="tabtrigger">
+                <ul>
+                    <li class="active"><a href="" data-tab="1" class="trackevent" data-trackeventlabel="net_binnen">Net binnen</a></li>
+                    <li><a href="#" data-tab="2" class="trackevent" data-trackeventlabel="meest_gelezen">Meest gelezen</a></li>
+                    <div class="clear"></div>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="tab tab-1 active">
+                <div
+    id="block-60b1d313f9624bb781230afa99c1d79d"
+    data-id="block-60b1d313f9624bb781230afa99c1d79d"
+    data-position=""
+    data-type="mostrecent"
+    class="block mostrecent"
+    data-sac-marker="block.mostrecent"
+    data-limit="4"
+    data-offset="0"
+>
+    <div class="contentlist most-recent">
+    <div class="block-wrapper clearfix">
+            <div class="block-title">
+                <h2>Net binnen</h2>
+            </div>
+        <div class="block-content">
+            <ul>
+                    <li class="  " data-sac-marker="articlelist.mostrecent.1">
+                        <div class="list-content">
+                            <a href="/economie/5334113/bulgarije-schort-lidmaatschap-eurozone.html" title="Bulgarije schort lidmaatschap eurozone op" class="trackevent" >
+                                <div class="list-overlay">
+                                    <span class="info">
+                                        <span class="time">12:16</span>
+                                        <span class="title">Bulgarije schort lidmaatschap eurozone op</span>
+                                        <span class="section">Economie</span>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li class="  " data-sac-marker="articlelist.mostrecent.2">
+                        <div class="list-content">
+                            <a href="/binnenland/5334110/moeder-van-overleden-baby-sloterplas-twee-jaar-bekend.html" title="Moeder van overleden baby Sloterplas na twee jaar bekend" class="trackevent" >
+                                <div class="list-overlay">
+                                    <span class="info">
+                                        <span class="time">12:16</span>
+                                        <span class="title">Moeder van overleden baby Sloterplas na twee jaar bekend</span>
+                                        <span class="section">Binnenland</span>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li class="  hasinfographic" data-sac-marker="articlelist.mostrecent.3">
+                        <div class="list-content">
+                            <a href="/uit/5332292/plekken-in-buurt-van-amsterdam-kun-veilig-water-in-.html" title="Op deze plekken in de buurt van Amsterdam kun je veilig het water in " class="trackevent" >
+                                <div class="list-overlay">
+                                    <span class="info">
+                                        <span class="time">12:11</span>
+                                        <span class="title">Op deze plekken in de buurt van Amsterdam kun je veilig het water in </span>
+                                        <span class="section">Uit</span>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li class="  hasinfographic" data-sac-marker="articlelist.mostrecent.4">
+                        <div class="list-content">
+                            <a href="/uit/5332268/plekken-in-buurt-van-utrecht-kun-veilig-water-in-.html" title="Op deze plekken in de buurt van Utrecht kun je veilig het water in " class="trackevent" >
+                                <div class="list-overlay">
+                                    <span class="info">
+                                        <span class="time">12:08</span>
+                                        <span class="title">Op deze plekken in de buurt van Utrecht kun je veilig het water in </span>
+                                        <span class="section">Uit</span>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+</div>
+                <div class="clear"></div>
+            </div>
+            <div class="tab tab-2">
+                <div
+    id="block-71c39b602c2a40808f9d98c6ced0b30a"
+    data-id="block-71c39b602c2a40808f9d98c6ced0b30a"
+    data-position=""
+    data-type="mostread"
+    class="block mostread"
+    data-sac-marker="block.mostread"
+    data-limit="4"
+    data-offset="0"
+>
+    <div class="contentlist most-read">
+    <div class="block-wrapper clearfix">
+            <div class="block-title">
+                <h2>Meest gelezen</h2>
+            </div>
+        <div class="block-content">
+            <ul>
+                    <li class="  " data-sac-marker="articlelist.mostread.1">
+                        <div class="list-content">
+                            <a href="/wk-2018/5332541/reacties-ontsnapping-argentinie-wk-gesloten.html" title="Reacties na ontsnapping Argentinië op WK (gesloten)" class="trackevent" >
+                                <div class="list-overlay">
+                                    <span class="info">
+                                        <span class="ranking">1.</span>
+                                        <span class="title">Reacties na ontsnapping Argentinië op WK (gesloten)</span>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li class="hasvideo  " data-sac-marker="articlelist.mostread.2">
+                        <div class="list-content">
+                            <a href="/muziek/5333396/glennis-grace-bij-americas-got-talent.html" title="Glennis Grace door bij America&#39;s Got Talent" class="trackevent" >
+                                <div class="list-overlay">
+                                    <span class="info">
+                                        <span class="ranking">2.</span>
+                                        <span class="title">Glennis Grace door bij America&#39;s Got Talent</span>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li class="hasvideo  " data-sac-marker="articlelist.mostread.3">
+                        <div class="list-content">
+                            <a href="/vliegramp-oekraine/5332934/onderzoekers-mh17-ramp-afgeluisterd-oekraine-en-rusland.html" title="&#39;Onderzoekers MH17-ramp afgeluisterd door Oekraïne en Rusland&#39;" class="trackevent" >
+                                <div class="list-overlay">
+                                    <span class="info">
+                                        <span class="ranking">3.</span>
+                                        <span class="title">&#39;Onderzoekers MH17-ramp afgeluisterd door Oekraïne en Rusland&#39;</span>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li class="hasvideo  " data-sac-marker="articlelist.mostread.4">
+                        <div class="list-content">
+                            <a href="/economie/5332526/faillissement-men-at-work-definitief.html" title="Faillissement Men At Work is definitief" class="trackevent" >
+                                <div class="list-overlay">
+                                    <span class="info">
+                                        <span class="ranking">4.</span>
+                                        <span class="title">Faillissement Men At Work is definitief</span>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="block-footer">
+            <a href="/meest-gelezen" class="footer-link trackevent section-after-colored">
+                <strong>Meer nieuws</strong>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+</div>
+    <div
+    id="block-241493"
+    data-id="block-241493"
+    data-position=""
+    data-type="highlight"
+    class="block highlight compact"
+    data-sac-marker="block.highlight"
+>
+</div>
+    <div
+    id="block-387540"
+    data-id="block-387540"
+    data-position=""
+    data-type="tealium"
+    class="block tealium compact r1"
+    data-sac-marker="block.tealium"
+>
+    <div class="block-wrapper" id="r1"></div>
+</div>
+    <div
+    id="block-241499"
+    data-id="block-241499"
+    data-position=""
+    data-type="highlight"
+    class="block highlight compact"
+    data-sac-marker="block.highlight"
+>
+</div>
+    <div
+    id="block-241501"
+    data-id="block-241501"
+    data-position=""
+    data-type="highlight"
+    class="block highlight compact"
+    data-sac-marker="block.highlight"
+>
+</div>
+    <div
+    id="block-387543"
+    data-id="block-387543"
+    data-position=""
+    data-type="tealium"
+    class="block tealium compact r2"
+    data-sac-marker="block.tealium"
+>
+    <div class="block-wrapper" id="r2"></div>
+</div>
+    <div
+    id="block-241503"
+    data-id="block-241503"
+    data-position=""
+    data-type="highlight"
+    class="block highlight compact"
+    data-sac-marker="block.highlight"
+>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zone clearfix" data-zone="footer" data-vr-zone="footer">
+</div>
+                </div>
+            </div>
+        </div>
+            <div class="zone clearfix" data-zone="body_bottom" data-vr-zone="body_bottom">
+    <div
+    id="block-387546"
+    data-id="block-387546"
+    data-position=""
+    data-type="tealium"
+    class="block tealium h2"
+    data-sac-marker="block.tealium"
+>
+    <div class="block-wrapper" id="h2"></div>
+</div>
+</div>
+            <div class="block footer">
+    <div class="block-wrapper">
+        <div class="block-content">
+            <div class="footer-wrapper">
+                <div class="footer-logo">
+                    <div class="svg-icon icon-l icon-">
+                            <img src="/static/img/atoms/images/logos/logosprite.svg?v=1" />
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <span class="publisher-credits">
+                        &copy; 2018 Sanoma Digital The Netherlands B.V.
+                        NU - onderdeel van <a href="https://www.sanoma.com" class="trackevent" data-trackeventaction="page-footer">Sanoma Media Netherlands Group</a>
+                    </span>
+                    <div class="block-col first">
+                        <ul>
+                            <li class="first"><a href="/redactie.html" class="trackevent" data-trackeventaction="page-footer">Contact met de redactie</a></li>
+                            <li><a href="/colofon.html" class="trackevent" data-trackeventaction="page-footer">Colofon</a></li>
+                            <li><a href="/copyright.html" class="trackevent" data-trackeventaction="page-footer">Copyright</a></li>
+                            <li><a href="/disclaimer.html" class="trackevent" data-trackeventaction="page-footer">Disclaimer</a></li>
+                            <li><a href="/privacy-en-cookiebeleid.html" class="trackevent" data-trackeventaction="page-footer">Privacy en cookiebeleid</a></li>
+                            <li><a href="/klachten.html" class="trackevent" data-trackeventaction="page-complaints">Klachten</a></li>
+                            <li><a href="https://www.nuadverteren.nl/" class="trackevent" data-trackeventaction="page-footer">Adverteren</a></li>
+                            <li><a href="/mobiel.html" class="trackevent" data-trackeventaction="page-footer">Apps</a></li>
+                            <li class="last"><a href="/over-nu" class="trackevent" data-trackeventaction="page-footer">Werken bij NU.nl</a></li>
+                        </ul>
+                    </div>
+                    <div class="block-col last">
+                        <ul class="social-badges">
+        <li class="facebook"><a href="https://www.facebook.com/NUnl" target="_blank" class="trackevent"><i class="fa fa-facebook fa-lg"></i></a></li>
+        <li class="twitter"><a href="https://www.twitter.com/NUnl" target="_blank" class="trackevent"><i class="fa fa-twitter fa-lg"></i></a></li>
+        <li class="googleplus"><a href="https://plus.google.com/+NUnl" target="_blank" class="trackevent"><i class="fa fa-google-plus fa-fa-lg"></i></a></li>
+        <li class="rss"><a href="/rss" target="_blank" class="trackevent"><i class="fa fa-rss fa-lg"></i></a></li>
+</ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <div class="modal-overlay"></div>
+    <div class="overlay default">
+    <div class="overlay-close trackevent"></div>
+    <div class="overlay-inner">
+        <div class="overlay-content-container">
+            <div class="overlay-content-boundary clearfix">
+                <i class="fa fa-times overlay-close trackevent"></i>
+                <div class="overlay-title"></div>
+                <div class="overlay-content clearfix"></div>
+                <div class="overlay-footer clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="overlay videoplayer">
+    <div class="overlay-close trackevent" data-trackeventcategory="videopopup" data-trackeventaction="close popup" data-trackeventlabel="click naast video"></div>
+    <div class="overlay-inner">
+        <div class="overlay-content-container">
+            <div class="overlay-content-boundary clearfix">
+                <div id="overlay_leaderboard_adspot"></div>
+                <i class="fa fa-times overlay-close trackevent" data-trackeventcategory="videopopup" data-trackeventaction="close popup" data-trackeventlabel="kruisje"></i>
+                <div class="overlay-title"></div>
+                <div class="overlay-content"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="overlay contribution-flow">
+    <div class="overlay-inner">
+        <div class="overlay-content-container">
+            <div class="overlay-content-boundary clearfix">
+                <i class="fa fa-times overlay-close button trackevent" data-trackeventcategory="contribution_flow" data-trackeventaction="close popup" data-trackeventlabel="x-button"></i>
+                <div class="overlay-title">Tip de redactie</div>
+                <div class="overlay-content">
+                    <div class="notification login-notification warning anonymous_users_only">Je moet ingelogd zijn om van deze mogelijkheid gebruik te maken. <a href="#" class="trackevent" data-trackeventcategory="contribution_flow" data-trackeventaction="login">Log hier in</a></div>
+                    <label>Voeg tekst toe aan je bijdrage.
+                        <textarea placeholder="Typ je bericht" class="contribution-entry"></textarea>
+                    </label>
+                    <div class="filedragdrop login_users_only">
+                        <div class="filedragdrop-header">
+                            <h3>Media uploaden</h3>
+                            <div class="filedragdrop-counter">
+                                <span class="counter">0</span> / <span class="limit">0</span> toegevoegd
+                            </div>
+                        </div>
+                        <div class="filedragdrop-area as-input">
+                            <div class="filedragdrop-files">
+                            </div>
+                            <div class="filedragdrop-notification">
+                                <span class="filedragdrop-placeholder"></span>
+                                <div class="filedragdrop-notification-idle">
+                                    <p>
+                                        <label>
+                                            Sleep hier je bestanden heen <br />
+                                            of <span>selecteer een foto/video</span>
+                                            <input type="file" class="filedragdrop-fileinput" />
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="filedragdrop-notification-drag">
+                                    <p>
+                                        Laat los om te beginnen met uploaden
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notification dynamic-notification"></div>
+                </div>
+                <div class="overlay-footer clearfix">
+                    <div class="right-col login_users_only">
+                        <a class="btn inverted submit trackevent" data-trackeventcategory="contribution_flow" data-trackeventaction="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Versturen</a>
+                    </div>
+                    <div class="right-col anonymous_users_only">
+                            <a class="btn submit disabled trackevent" data-trackeventcategory="contribution_flow" data-trackeventaction="submit-disabled"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Versturen</a>
+                        </div>
+                    <div class="left-col">
+                        <p>Door te versturen ga je akkoord met <a href="/nujij-voorwaarden.html" target="_blank" class="trackevent" data-trackeventcategory="contribution_flow" data-trackeventaction="terms-conditions">onze voorwaarden</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/static/CACHE/js/7b3af6b1e54d.js"></script>
+<script type="text/javascript">
+    Vue.config.devtools = false;
+    Vue.config.silent = true;
+</script>
+<!-- BLOCK JS -->
+<script type="text/javascript" src="/static/CACHE/js/accbfca2c5d7.js"></script>
+<!-- JW player -->
+<script src="https://content.jwplatform.com/libraries/whqXCOFb.js" type="text/javascript"></script>
+<script>
+    // add Gigya dynamically.
+    // ab_testing_enabled: true is required by SA team for registration screen testing.
+    var sanoma_account_global_config = {
+        api_key: '3_pNK9L9zU_Sx2BKzTUJuAmy1im2zN0pOkwM-Ui3AgrneVzSpyQqioWy_iZ1cbQzS5',
+        screenset_prefix: 'nunlv2',
+        hide_fb_native_safari: false,
+        events: NU.account.events || {},
+        ab_testing_enabled: true
+    };
+    jQuery.cachedScript('https://account.sanomaservices.nl/js/sanoma_account.min.js');
+    // Sanoma search, hidden and disabled without consent.
+    ConsentUtility.consent_given(function() {
+        jQuery.cachedScript('https://sss.snmmd.nl/nu/sanomasearch.min.js').done(function(){
+            if(jQuery('#sanoma_search').length > 0){
+                SANOMASEARCH.init(['autocomplete', 'serp']);
+            } else {
+                SANOMASEARCH.init(['autocomplete']);
+            }
+        });
+    });
+</script>
+</body>
+</html>
